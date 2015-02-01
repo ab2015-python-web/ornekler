@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Mesaj Kayıt</title>
+
+  <style>
+    body{
+      margin:0;padding: 15px 20px;
+      font: 12px/20px Tahoma;
+    }
+  </style>
+
+</head>
+<body>
+
+
+    <form action="#" method="POST">
+      name : <input type="text" name="name" id=""><br>
+      mesaj: <br>
+      <textarea name="mesaj" id="" cols="30" rows="10"></textarea>
+      <br>
+      <button type="submit">Gönder</button>
+    </form>
+
+    <hr>
+    <h2>Kayıtlar</h2>
+
+    <ul class="kayitlar">
+    {% for kayit in kayitlar %}
+
+      <li>
+        Name : {{ kayit.name }} <br>
+        Mesaj : {{ kayit.mesaj }}
+      </li>
+      <hr>
+
+    {% endfor %}
+    </ul>
+
+
+</body>
+</html>
