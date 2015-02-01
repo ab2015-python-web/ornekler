@@ -1,4 +1,4 @@
-kelimeler = open("text.txt", "r").read().split(" ")
+kelimeler = open("text.txt", "r").read().split()
 dizi = {}
 
 for kelime in kelimeler:
