@@ -25,9 +25,14 @@ def hello():
 
 @app.route('/api/messages', methods=['POST'])
 def post_message():
+    if request.json is None:
+        request_data = request.form
+    else:
+        request_data = request.json
+
     data = {
-        'name': request.form.get('name'),
-        'message': request.form.get('message'),
+        'name': request_data.get('name'),
+        'message': request_data.get('message'),
         'date_sent': datetime.now()
     }
     db.messages.insert(data)
